@@ -177,7 +177,7 @@ output.freq_orig   = orig;
 [origdata, reconstructed]=ft_reconstruct_erp(output(end));
 
 % figure;
-subplot(2,2,1); plot(freqoi,mean(noise,2),freqoi,mean(orig,2),freqoi,mean(noise3,2));xlim([0 60]);drawnow;
+figure;subplot(2,2,1); plot(freqoi,mean(noise,2),freqoi,mean(orig,2),freqoi,mean(noise3,2));xlim([0 60]);drawnow;
 subplot(2,2,2); plot([origdata reconstructed]);drawnow;
 subplot(2,2,3); plot(tmp_erp_est);drawnow;
 

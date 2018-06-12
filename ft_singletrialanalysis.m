@@ -132,7 +132,7 @@ switch cfg.method
     cfg.aseo.tapsmofrq     = ft_getopt(cfg.aseo, 'tapsmofrq',     10);
     cfg.aseo.fsample       = fsample;
     cfg.aseo.searchGrid    = 1000./fsample; % defined in ms
-    cfg.aseo.sampPeri      = 1000./fsapmle; % defined in ms;
+    cfg.aseo.sampPeri      = 1000./fsample; % defined in ms;
     cfg.aseo.nchan         = nchan;
     cfg.aseo.nsmp          = nsmp;
     cfg.aseo.ntrl          = numel(data.trial);
@@ -247,7 +247,7 @@ switch cfg.method
       output   = ft_singletrialanalysis_aseo(cfg, chandat_fft, initcomp_fft);
       
       params(k).latency    = output.lat_est/fsample;
-      params(k).amplitude  = output.amp_est_unscaled;
+      params(k).amplitude  = output.amp_est;
       params(k).components = output.erp_est;
       params(k).rejectflag = output.rejectflag;
       
@@ -391,4 +391,3 @@ ft_postamble previous   data
 ft_postamble provenance dataout
 ft_postamble history    dataout
 ft_postamble savevar    dataout
-
